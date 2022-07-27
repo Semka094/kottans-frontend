@@ -1,6 +1,6 @@
 # kottans-frontend
 
-##Stage 0. Self-Study
+## Stage 0. Self-Study
 <details>
 <summary>Git & Version Control</summary> 
 
