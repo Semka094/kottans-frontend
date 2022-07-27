@@ -39,7 +39,7 @@ There are 2 different categories:
 
 -----------------
 
-##Branches
+## Branches
 ```$ git tag``` _(створити тег, можна і на древній коміт)_
 
 🔥 ```$ git branch``` _(показати усі вітки і яка зараз вітка активна, for example → *master)_
@@ -58,7 +58,7 @@ Running ```git checkout``` command will:
 - remove all files and directories from the Working Directory that Git is tracking;
 - go into the repository and pull out all of the files and directories of the commit that the branch points to;
 
-##Merges
+## Merges
 ```
 $ git merge <other-branch>
 ```
@@ -103,7 +103,7 @@ $ git reset
 `````--soft````` _(поверне на Staging Index i SHA буде іншим)_
 
 `````--hard````` _(видалить коміт ! )_
-##Relative Commit References
+## Relative Commit References
 
 ``X~n`` means: The nth ancestor of X.
 
@@ -113,7 +113,7 @@ If ``X`` has more than one parent, one needs to distinguish between them when us
 So X^1 would be the first parent, X^2 would be the second parent, and so on. X^ is equivalent to X^1 (and also equivalent to X~1).
 
 
-##Backup Branch 💡
+## Backup Branch 💡
 
 Remember that using the ``git reset`` command will _erase commits from the current branch_. 
 
