@@ -123,6 +123,151 @@ Remember that using the ``git reset`` command will _erase commits from the curre
     $ git branch backup
  </details>
 
+<details>
+<summary>Linux CLI, and HTTP</summary>
+
+### Linux
+``chmod`` - change premission mode
+
+``cat`` - concatenate
+
+``cd`` - change directory
+
+``mkdir`` - make directory
+
+``rmdir`` - remove empty directory
+
+``rm -r <name_of_directory>`` - remove directory even if it has some file
+
+``mv`` - move or rename
+
+``pwd`` - print current working directory
+
+``*``  - all files
+
+``finger`` - show user info
+
+``find`` - find files
+
+``df`` - disk free - to check how much space in the system
+
+``ps``- process status
+
+``ps aux`` - show all processes
+
+``grep`` - to find patterns in data
+
+``kill -9 <name_of_the_process>`` - kill immediately 
+
+### HTTP
+HTTP Request Verbs
+- GET (fetch)
+- POST (create)
+- PUT (update)
+- DELETE
+
+#### HTTP Requests
+- **request** line (what is being requested)
+- **headers** (additional info about message, request, communication format)
+- **body** (optional): (the content of the request)
+
+#### HTTP Responses
+- **status line** (includes a status code for example, code 200)
+- **headers** (additional info about the response, for ex, content type or information about the server)
+- **body** (optional): the content of the response. For ex, HTML content of a requested web page)
+
+#### Status Codes
+``1xx``: Informational Messages
+
+``2xx``: Successful (``200 OK``)
+
+``3xx``: Redirection (``303 See Other``)
+
+``4xx``: Client Error (``404 Not Found``)
+
+``5xx:`` Server Error (``500 Internal Server Error``)
+
+### HTTP Connections
+A connection must be established between the client and server before they can communicate with each other.
+
+**Persistent Connections**
+
+HTTP/1.1 introduced persistent connections, long-lived connections that stay open until the client closes them. Persistent connections are the default in HTTP/1.1
+To achieve this, HTTP/1.1 keeps TCP connections open, even after a transaction is complete. The existing connection will be reused for future references. This is known as a persistent connection.
+
+**Parallel Connections**
+
+In addition to persistent connections, browsers/clients also employ a technique, called parallel connections, to minimize network delays. The age-old concept of parallel connections involves creating a pool of connections (generally capped at six connections). If there are six assets that the client needs to download from a website, the client makes six parallel connections to download those assets, resulting in a faster turnaround.
+
+### HTTP Authentication
+
+The server must know who a user is in order to provide that functionality.
+There are a few different ways a server can collect this information, and most websites use a hybrid of these approaches:
+
+**Request headers**: From, Referer, and User-Agent
+
+**Client-IP**: the IP address of the client.
+
+**Fat URLs**: storing the state of the current user by modifying the URL and redirecting to a different URL on each click; each click essentially accumulates state.
+
+**Cookies**: the most popular and non-intrusive approach.
+
+#### Basic Authentication
+
+In Basic Authentication, the server initially denies the client's request with a WWW-Authenticate response header and a 401 Unauthorized  code. On seeing this header, the browser displays a login dialog, prompting for a username and password.
+
+- **Tackling the 401 Unauthorised Response**
+
+The 401 error occurs when a client request was not successfully completed. The request failed because important authentication credentials were not present in the request.
+
+- **Authorisation Header**
+
+Another commonly used method for sending client identity information to the server is through the Authorisation header.
+
+- **Authentication Using Cookies**
+
+Cookies allow the server to attach arbitrary information for outgoing responses via the Set-Cookie response header. A cookie is set with one or more name=value pairs separated by a semicolon (;), as in Set-Cookie: session-id=12345ABC; username=semka.
+
+#### Digest Authentication
+
+**From Client**: Digest Authentication does not transfer a password to the server.
+
+**At Server**: The algorithm used to build the hash is used by the server to decode the password and username.
+
+### HTTP Caching
+
+Types of Caching:
+
+1. **Public cashe**: stores the server response for multiple users.
+
+2. **Private cashe**: limited to a single user. The resource would be stored in the user's browser.
+
+Keeping the content fresh and up-to-date is one of the primary responsibilities of the cache. To keep the cached copy consistent with the server, HTTP provides some simple mechanisms, namely _Document Expiration_ and _Server Revalidation_.
+
+#### Document Expiration
+
+HTTP allows an origin-server to attach an expiration date to each document using the Cache-Control and Expires response headers. This helps the client and other cache servers know how long a document is valid and fresh.
+
+``Expires`` is an older HTTP/1.0 response header that specifies the value as an absolute date.
+
+``Cache-Control: max-age=<s>`` header where ``max-age`` is a relative age, specified in seconds, from the time the response was created. 
+Thus if a document should expire after one day, the expiration header should be ``Cache-Control: max-age=86400``.
+
+#### Server Revalidation
+
+Once a cached document expires, the cache must revalidate with the server to check if the document has changed.
+Just because a cached copy has expired doesn't mean that the server actually has newer content.
+
+## HTTPS
+
+The HTTPS protocol provides a secure connection on the web.
+HTTPS's secure component involves inserting a layer of encryption/decryption between HTTP and TCP. This is the Secure Sockets Layer (SSL) or the improved Transport Layer Security (TLS).
+
+HTTPS uses the SSL or TLS to encrypt the entire communication between the client and the server. This makes sure that the client is connected only to the right server. Also, it verifies that the data is transferred only to the intended server.
+
+
+</details>
+
 
 
 
