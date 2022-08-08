@@ -268,7 +268,14 @@ HTTPS uses the SSL or TLS to encrypt the entire communication between the client
 
 </details>
 
+<details>
+<summary>Git Collaboration</summary>
 
+CI _(Continuous Integration)_ - is the practice of automating the integration of code changes from multiple contributors into a single software project.
+It’s a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where builds and tests then run.
+
+CD - _(Continious Delivery)_ - CD focuses an organization on building a streamlined, automated software release process.
+</details>
 
 
 
