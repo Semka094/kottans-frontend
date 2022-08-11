@@ -278,4 +278,70 @@ CD - _(Continious Delivery)_ - CD focuses an organization on building a streamli
 </details>
 
 
+<details>
+  <summary>Intro to HTML and CSS</summary>
 
+New info for me was that there is _Quirks mode_ for websites that do not follow W3C і IETF standards.
+
+Inline tags cannot contain block tags.
+
+**Wrong**: ``<span><div></div></span>``
+
+**Good**: ``<div><span></span></div>``
+
+semantic HTML element - an element that implies (натякає/передбачає) some meaning to the content. Also, it may help in SEO rankings.
+
+For example: ``<h1>``, ``<nav>``,``<head>``, ``<footer>``
+
+**There are 3 types of selectors**:
+- Element (h1, p etc)
+- Class ( .class_name)
+- ID selector (#nameID)
+
+**Combining selectors:**
+
+**Element with Class selector**
+
+```
+p.blue {
+  font-color: blue;
+}
+```
+
+Blue color will apply to those paragraph that has ``classname=”big”`` only
+
+**Child selector**
+
+```
+article > p {
+  font-color: blue;
+}
+```
+
+Blue color will apply to p element that is a direct child of article element
+
+**Descending selector**
+
+```
+article p {
+  font-color: blue;
+}
+```
+
+Blue color will apply to all p elements in the article element at any level. 
+Whether it is a child or not.
+
+
+There are _relative_ and _absolute_ positioning.
+
+### Media Queries
+
+If we want to style our website based on the size of the screen, we should use, for example:
+
+``@media (min-width: 768px) {...} and (max-width: 991) {...}``
+
+``@media (orientation: portrait) {...}``
+
+``@media screen {...}``
+
+</details>
