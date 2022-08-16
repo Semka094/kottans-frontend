@@ -335,6 +335,7 @@ Whether it is a child or not.
 There are _relative_ and _absolute_ positioning.
 
 ### Media Queries
+I will definitely use this approach.
 
 If we want to style our website based on the size of the screen, we should use, for example:
 
@@ -343,5 +344,51 @@ If we want to style our website based on the size of the screen, we should use, 
 ``@media (orientation: portrait) {...}``
 
 ``@media screen {...}``
+
+</details>
+
+
+<details>
+<summary>Responsive Web Design</summary> 
+
+### Viewport meta tag
+
+A meta viewport tag gives the browser instructions on how to control the page's dimensions and scaling.
+```
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   …
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   …
+ </head>
+ …
+ ```
+
+In addition to setting an initial-scale, you can also set the following attributes on the viewport:
+
+``minimum-scale``
+
+``maximum-scale``
+
+``user-scalable``
+
+### CSS Grid Layout
+
+CSS Grid Layout allows for the straightforward creation of flexible grids. 
+
+If we consider the earlier floated example, rather than creating our columns with percentages, we could use grid layout and the ``fr`` unit, which represents a portion/fraction of the available space in the container.
+
+```
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+```
+### Multiple-column layout
+
+For some types of layout, you can use Multiple-column Layout (Multicol), which can create responsive numbers of columns with the ``column-width property``. In the demo below, you can see that columns are added if there is room for another ``200px`` column.
+
+Regarding Flex and Grid - everything was new for me.
 
 </details>
