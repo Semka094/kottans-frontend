@@ -392,3 +392,27 @@ For some types of layout, you can use Multiple-column Layout (Multicol), which c
 Regarding Flex and Grid - everything was new for me.
 
 </details>
+
+<details>
+  <summary>JS Basics</summary> 
+
+  ### JavaScript Basics
+
+#### Array
+- _one-dimensional array_, meaning it only has one level, or that it does not have any other arrays nested within it.
+
+- _multi-dimensional array_, or an array that contains other arrays.
+
+``indexOf()`` - can be incredibly useful for quickly checking for the presence of an element on an array.
+
+``hasOwnProperty()`` - check if an Object has a property.
+
+Callbacks are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in filter, the callback function tells JavaScript the criteria for how to filter an array.
+
+``Array.prototype.reduce()``, or simply ``reduce()``, is the most general of all array operations in JavaScript. 
+
+You can solve almost any array processing problem using the reduce method.
+The reduce method allows for more general forms of array processing, and it's possible to show that both ``filter`` and ``map`` can be derived as special applications of reduce. The reduce method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
+
+
+</details>
