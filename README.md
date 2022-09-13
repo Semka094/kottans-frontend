@@ -1,6 +1,7 @@
 # kottans-frontend
 
 ## Stage 0. Self-Study
+
 <details>
 <summary>Git & Version Control</summary> 
 
@@ -16,6 +17,7 @@ Version control is like a save point in the game.
 - Mercurial
 
 There are 2 different categories:
+
 - _Centralized model_ (one computer hosts the project and every interaction must go through this computer)
 - _Distributed model_ (no central repository of info, each dev has a complete copy on their computer)
 
@@ -23,7 +25,6 @@ There are 2 different categories:
 ```$ git init```
 ```$ git clone```
 ```$ git status```
-
 
 ```ls``` - used to list files and directories
 
@@ -40,6 +41,7 @@ There are 2 different categories:
 -----------------
 
 ## Branches
+
 ```$ git tag``` _(створити тег, можна і на древній коміт)_
 
 🔥 ```$ git branch``` _(показати усі вітки і яка зараз вітка активна, for example → *master)_
@@ -50,39 +52,45 @@ There are 2 different categories:
 
 🔥  ``$ git checkout -b name_of_the_branch`` _(створить нову вітку і перейде в неї = git checkout)_
 
-```$ git branch -d name_of_the_branch``` _(видалити вітку: можна зробити лише тоді коли ти на іншій вітці, і якщо там немає змін які не закомічені в іншу гілку)_
+```$ git branch -d name_of_the_branch``` _(видалити вітку: можна зробити лише тоді коли ти на іншій вітці, і якщо там
+немає змін які не закомічені в іншу гілку)_
 
-```$ git branch -D name_of_the_branch``` _(дозволить видалити бренч навіть якщо там є зміни які ніде не були закомічені)_
+```$ git branch -D name_of_the_branch``` _(дозволить видалити бренч навіть якщо там є зміни які ніде не були
+закомічені)_
 
 Running ```git checkout``` command will:
+
 - remove all files and directories from the Working Directory that Git is tracking;
 - go into the repository and pull out all of the files and directories of the commit that the branch points to;
 
 ## Merges
+
 ```
 $ git merge <other-branch>
 ```
 
 There are two types of merges:
 
-- **Fast-forward merge** – the branch being merged in must be ahead of the checked out branch. The checked out branch's pointer will just be moved forward to point to the same commit as the other branch.
+- **Fast-forward merge** – the branch being merged in must be ahead of the checked out branch. The checked out branch's
+  pointer will just be moved forward to point to the same commit as the other branch.
 
 - **Regular merge:**
     - two divergent branches are combined
     - a merge commit is created
-  
+
 ```$ git log --oneline --decorate --graph --all``` _(покаже усі бренчі і відвітвлення)_
 
 ```$ git branch name_of_a_new_branch SHA``` _(створить вітку від певного коміту)_
 
-🔥 ``$ git commit -a -m "short desr"`` _(одночаcно додає в stage index ``-add``, комітить і добавляє коментар ``-message``)_
+🔥 ``$ git commit -a -m "short desr"`` _(одночаcно додає в stage index ``-add``, комітить і добавляє
+коментар ``-message``)_
 
-```$ git commit --amend``` _(дозволяє змінити/виправити тайтл останнього коміту або оновити останній комміт (замість створення нового))_
+```$ git commit --amend``` _(дозволяє змінити/виправити тайтл останнього коміту або оновити останній комміт (замість
+створення нового))_
 
 ```$ git revert <SHA-of-commit-to-revert>``` _(для скасування попередньо зробленого коміту)_
 
 ```$ git reset <reference-to-commit>```
-
 
 ``` $ git reset``` can be used to:
 
@@ -91,42 +99,43 @@ There are two types of merges:
 - move committed changes to the staging index
 - unstage committed changes
 
-
 **Git Reset's Flags**
+
 ```
 $ git reset
 ```
 
-
-`````--mixed ````` _(by default і поверне його у Working Directory. Можна робити зміни, але SHA вже буде іншим навіть якщо контент не зміниться)_
+`````--mixed ````` _(by default і поверне його у Working Directory. Можна робити зміни, але SHA вже буде іншим навіть
+якщо контент не зміниться)_
 
 `````--soft````` _(поверне на Staging Index i SHA буде іншим)_
 
 `````--hard````` _(видалить коміт ! )_
+
 ## Relative Commit References
 
 ``X~n`` means: The nth ancestor of X.
 
 ``X^`` means: The parent of X. This is equivalent to X~1.
 
-If ``X`` has more than one parent, one needs to distinguish between them when using the ``^`` notation.
-So X^1 would be the first parent, X^2 would be the second parent, and so on. X^ is equivalent to X^1 (and also equivalent to X~1).
-
+If ``X`` has more than one parent, one needs to distinguish between them when using the ``^`` notation. So X^1 would be
+the first parent, X^2 would be the second parent, and so on. X^ is equivalent to X^1 (and also equivalent to X~1).
 
 ## Backup Branch 💡
 
-Remember that using the ``git reset`` command will _erase commits from the current branch_. 
+Remember that using the ``git reset`` command will _erase commits from the current branch_.
 
 > Note: So if you want to follow along with all the resetting stuff that's coming up, you'll need to create a branch on the current commit that you can use as a backup.
 
-
     $ git branch backup
+
  </details>
 
 <details>
 <summary>Linux CLI, and HTTP</summary>
 
 ### Linux
+
 ``chmod`` - change premission mode
 
 ``cat`` - concatenate
@@ -157,26 +166,31 @@ Remember that using the ``git reset`` command will _erase commits from the curre
 
 ``grep`` - to find patterns in data
 
-``kill -9 <name_of_the_process>`` - kill immediately 
+``kill -9 <name_of_the_process>`` - kill immediately
 
 ### HTTP
+
 HTTP Request Verbs
+
 - GET (fetch)
 - POST (create)
 - PUT (update)
 - DELETE
 
 #### HTTP Requests
+
 - **request** line (what is being requested)
 - **headers** (additional info about message, request, communication format)
 - **body** (optional): (the content of the request)
 
 #### HTTP Responses
+
 - **status line** (includes a status code for example, code 200)
 - **headers** (additional info about the response, for ex, content type or information about the server)
 - **body** (optional): the content of the response. For ex, HTML content of a requested web page)
 
 #### Status Codes
+
 ``1xx``: Informational Messages
 
 ``2xx``: Successful (``200 OK``)
@@ -188,37 +202,47 @@ HTTP Request Verbs
 ``5xx:`` Server Error (``500 Internal Server Error``)
 
 ### HTTP Connections
+
 A connection must be established between the client and server before they can communicate with each other.
 
 **Persistent Connections**
 
-HTTP/1.1 introduced persistent connections, long-lived connections that stay open until the client closes them. Persistent connections are the default in HTTP/1.1
-To achieve this, HTTP/1.1 keeps TCP connections open, even after a transaction is complete. The existing connection will be reused for future references. This is known as a persistent connection.
+HTTP/1.1 introduced persistent connections, long-lived connections that stay open until the client closes them.
+Persistent connections are the default in HTTP/1.1 To achieve this, HTTP/1.1 keeps TCP connections open, even after a
+transaction is complete. The existing connection will be reused for future references. This is known as a persistent
+connection.
 
 **Parallel Connections**
 
-In addition to persistent connections, browsers/clients also employ a technique, called parallel connections, to minimize network delays. The age-old concept of parallel connections involves creating a pool of connections (generally capped at six connections). If there are six assets that the client needs to download from a website, the client makes six parallel connections to download those assets, resulting in a faster turnaround.
+In addition to persistent connections, browsers/clients also employ a technique, called parallel connections, to
+minimize network delays. The age-old concept of parallel connections involves creating a pool of connections (generally
+capped at six connections). If there are six assets that the client needs to download from a website, the client makes
+six parallel connections to download those assets, resulting in a faster turnaround.
 
 ### HTTP Authentication
 
-The server must know who a user is in order to provide that functionality.
-There are a few different ways a server can collect this information, and most websites use a hybrid of these approaches:
+The server must know who a user is in order to provide that functionality. There are a few different ways a server can
+collect this information, and most websites use a hybrid of these approaches:
 
 **Request headers**: From, Referer, and User-Agent
 
 **Client-IP**: the IP address of the client.
 
-**Fat URLs**: storing the state of the current user by modifying the URL and redirecting to a different URL on each click; each click essentially accumulates state.
+**Fat URLs**: storing the state of the current user by modifying the URL and redirecting to a different URL on each
+click; each click essentially accumulates state.
 
 **Cookies**: the most popular and non-intrusive approach.
 
 #### Basic Authentication
 
-In Basic Authentication, the server initially denies the client's request with a WWW-Authenticate response header and a 401 Unauthorized  code. On seeing this header, the browser displays a login dialog, prompting for a username and password.
+In Basic Authentication, the server initially denies the client's request with a WWW-Authenticate response header and a
+401 Unauthorized code. On seeing this header, the browser displays a login dialog, prompting for a username and
+password.
 
 - **Tackling the 401 Unauthorised Response**
 
-The 401 error occurs when a client request was not successfully completed. The request failed because important authentication credentials were not present in the request.
+The 401 error occurs when a client request was not successfully completed. The request failed because important
+authentication credentials were not present in the request.
 
 - **Authorisation Header**
 
@@ -226,7 +250,9 @@ Another commonly used method for sending client identity information to the serv
 
 - **Authentication Using Cookies**
 
-Cookies allow the server to attach arbitrary information for outgoing responses via the Set-Cookie response header. A cookie is set with one or more name=value pairs separated by a semicolon (;), as in Set-Cookie: session-id=12345ABC; username=semka.
+Cookies allow the server to attach arbitrary information for outgoing responses via the Set-Cookie response header. A
+cookie is set with one or more name=value pairs separated by a semicolon (;), as in Set-Cookie: session-id=12345ABC;
+username=semka.
 
 #### Digest Authentication
 
@@ -242,28 +268,35 @@ Types of Caching:
 
 2. **Private cashe**: limited to a single user. The resource would be stored in the user's browser.
 
-Keeping the content fresh and up-to-date is one of the primary responsibilities of the cache. To keep the cached copy consistent with the server, HTTP provides some simple mechanisms, namely _Document Expiration_ and _Server Revalidation_.
+Keeping the content fresh and up-to-date is one of the primary responsibilities of the cache. To keep the cached copy
+consistent with the server, HTTP provides some simple mechanisms, namely _Document Expiration_ and _Server Revalidation_
+.
 
 #### Document Expiration
 
-HTTP allows an origin-server to attach an expiration date to each document using the Cache-Control and Expires response headers. This helps the client and other cache servers know how long a document is valid and fresh.
+HTTP allows an origin-server to attach an expiration date to each document using the Cache-Control and Expires response
+headers. This helps the client and other cache servers know how long a document is valid and fresh.
 
 ``Expires`` is an older HTTP/1.0 response header that specifies the value as an absolute date.
 
-``Cache-Control: max-age=<s>`` header where ``max-age`` is a relative age, specified in seconds, from the time the response was created. 
-Thus if a document should expire after one day, the expiration header should be ``Cache-Control: max-age=86400``.
+``Cache-Control: max-age=<s>`` header where ``max-age`` is a relative age, specified in seconds, from the time the
+response was created. Thus if a document should expire after one day, the expiration header should
+be ``Cache-Control: max-age=86400``.
 
 #### Server Revalidation
 
-Once a cached document expires, the cache must revalidate with the server to check if the document has changed.
-Just because a cached copy has expired doesn't mean that the server actually has newer content.
+Once a cached document expires, the cache must revalidate with the server to check if the document has changed. Just
+because a cached copy has expired doesn't mean that the server actually has newer content.
 
 ## HTTPS
 
-The HTTPS protocol provides a secure connection on the web.
-HTTPS's secure component involves inserting a layer of encryption/decryption between HTTP and TCP. This is the Secure Sockets Layer (SSL) or the improved Transport Layer Security (TLS).
+The HTTPS protocol provides a secure connection on the web. HTTPS's secure component involves inserting a layer of
+encryption/decryption between HTTP and TCP. This is the Secure Sockets Layer (SSL) or the improved Transport Layer
+Security (TLS).
 
-HTTPS uses the SSL or TLS to encrypt the entire communication between the client and the server. This makes sure that the client is connected only to the right server. Also, it verifies that the data is transferred only to the intended server.
+HTTPS uses the SSL or TLS to encrypt the entire communication between the client and the server. This makes sure that
+the client is connected only to the right server. Also, it verifies that the data is transferred only to the intended
+server.
 
 
 </details>
@@ -271,8 +304,9 @@ HTTPS uses the SSL or TLS to encrypt the entire communication between the client
 <details>
 <summary>Git Collaboration</summary>
 
-CI _(Continuous Integration)_ - is the practice of automating the integration of code changes from multiple contributors into a single software project.
-It’s a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where builds and tests then run.
+CI _(Continuous Integration)_ - is the practice of automating the integration of code changes from multiple contributors
+into a single software project. It’s a primary DevOps best practice, allowing developers to frequently merge code
+changes into a central repository where builds and tests then run.
 
 CD - _(Continious Delivery)_ - CD focuses an organization on building a streamlined, automated software release process.
 </details>
@@ -289,11 +323,13 @@ Inline tags cannot contain block tags.
 
 **Good**: ``<div><span></span></div>``
 
-semantic HTML element - an element that implies (натякає/передбачає) some meaning to the content. Also, it may help in SEO rankings.
+semantic HTML element - an element that implies (натякає/передбачає) some meaning to the content. Also, it may help in
+SEO rankings.
 
 For example: ``<h1>``, ``<nav>``,``<head>``, ``<footer>``
 
 **There are 3 types of selectors**:
+
 - Element (h1, p etc)
 - Class ( .class_name)
 - ID selector (#nameID)
@@ -328,13 +364,12 @@ article p {
 }
 ```
 
-Blue color will apply to all p elements in the article element at any level. 
-Whether it is a child or not.
-
+Blue color will apply to all p elements in the article element at any level. Whether it is a child or not.
 
 There are _relative_ and _absolute_ positioning.
 
 ### Media Queries
+
 I will definitely use this approach.
 
 If we want to style our website based on the size of the screen, we should use, for example:
@@ -354,6 +389,7 @@ If we want to style our website based on the size of the screen, we should use, 
 ### Viewport meta tag
 
 A meta viewport tag gives the browser instructions on how to control the page's dimensions and scaling.
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -375,9 +411,10 @@ In addition to setting an initial-scale, you can also set the following attribut
 
 ### CSS Grid Layout
 
-CSS Grid Layout allows for the straightforward creation of flexible grids. 
+CSS Grid Layout allows for the straightforward creation of flexible grids.
 
-If we consider the earlier floated example, rather than creating our columns with percentages, we could use grid layout and the ``fr`` unit, which represents a portion/fraction of the available space in the container.
+If we consider the earlier floated example, rather than creating our columns with percentages, we could use grid layout
+and the ``fr`` unit, which represents a portion/fraction of the available space in the container.
 
 ```
 .container {
@@ -385,9 +422,12 @@ If we consider the earlier floated example, rather than creating our columns wit
   grid-template-columns: 1fr 3fr;
 }
 ```
+
 ### Multiple-column layout
 
-For some types of layout, you can use Multiple-column Layout (Multicol), which can create responsive numbers of columns with the ``column-width property``. In the demo below, you can see that columns are added if there is room for another ``200px`` column.
+For some types of layout, you can use Multiple-column Layout (Multicol), which can create responsive numbers of columns
+with the ``column-width property``. In the demo below, you can see that columns are added if there is room for
+another ``200px`` column.
 
 Regarding Flex and Grid - everything was new for me.
 
@@ -396,9 +436,10 @@ Regarding Flex and Grid - everything was new for me.
 <details>
   <summary>JS Basics</summary> 
 
-  ### JavaScript Basics
+### JavaScript Basics
 
 #### Array
+
 - _one-dimensional array_, meaning it only has one level, or that it does not have any other arrays nested within it.
 
 - _multi-dimensional array_, or an array that contains other arrays.
@@ -407,12 +448,35 @@ Regarding Flex and Grid - everything was new for me.
 
 ``hasOwnProperty()`` - check if an Object has a property.
 
-Callbacks are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in filter, the callback function tells JavaScript the criteria for how to filter an array.
+Callbacks are the functions that are slipped or passed into another function to decide the invocation of that function.
+You may have seen them passed to other methods, for example in filter, the callback function tells JavaScript the
+criteria for how to filter an array.
 
-``Array.prototype.reduce()``, or simply ``reduce()``, is the most general of all array operations in JavaScript. 
+``Array.prototype.reduce()``, or simply ``reduce()``, is the most general of all array operations in JavaScript.
 
-You can solve almost any array processing problem using the reduce method.
-The reduce method allows for more general forms of array processing, and it's possible to show that both ``filter`` and ``map`` can be derived as special applications of reduce. The reduce method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
+You can solve almost any array processing problem using the reduce method. The reduce method allows for more general
+forms of array processing, and it's possible to show that both ``filter`` and ``map`` can be derived as special
+applications of reduce. The reduce method iterates over each item in an array and returns a single value (i.e. string,
+number, object, array). This is achieved via a callback function that is called on each iteration.
 
 
 </details>
+
+<details>
+<summary>DOM</summary> 
+</details>
+
+### DOM and JavaScript
+- Tree of nodes/elements created by the browser;
+- JavaScript can be used to read/write/manipulate to the DOM;
+- Object Oriented Representation (each node has its own properties and methods);
+
+The DOM (**The Document Object Model**) is not a programming language, but without it, the JavaScript language wouldn't have any model or notion of web
+pages, HTML documents, SVG documents, and their component parts. The document as a whole, the head, tables within the
+document, table headers, text within the table cells, and all other elements in a document are parts of the document
+object model for that document. They can all be accessed and manipulated using the DOM and a scripting language like
+JavaScript.
+
+The DOM was designed to be independent of any particular programming language, making the structural representation of
+the document available from a single, consistent API. Even if most web developers will only use the DOM through
+JavaScript, implementations of the DOM can be built for any language
