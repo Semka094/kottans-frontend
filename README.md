@@ -464,7 +464,6 @@ number, object, array). This is achieved via a callback function that is called 
 
 <details>
 <summary>DOM</summary> 
-</details>
 
 ### DOM and JavaScript
 - Tree of nodes/elements created by the browser;
@@ -479,4 +478,6 @@ JavaScript.
 
 The DOM was designed to be independent of any particular programming language, making the structural representation of
 the document available from a single, consistent API. Even if most web developers will only use the DOM through
-JavaScript, implementations of the DOM can be built for any language
+JavaScript, implementations of the DOM can be built for any language.
+</details>
+
